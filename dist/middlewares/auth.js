@@ -14,12 +14,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const auth = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    var _a, _b;
+    var _a, _b, _c;
     try {
         let token = ((_a = req === null || req === void 0 ? void 0 : req.cookies) === null || _a === void 0 ? void 0 : _a.token) ||
-            ((_b = req === null || req === void 0 ? void 0 : req.body) === null || _b === void 0 ? void 0 : _b.token);
-        // ||
-        // req?.header("Authorization").replace("Bearer ", "");
+            ((_b = req === null || req === void 0 ? void 0 : req.body) === null || _b === void 0 ? void 0 : _b.token) || ((_c = req === null || req === void 0 ? void 0 : req.header("Authorization")) === null || _c === void 0 ? void 0 : _c.replace("Bearer ", ""));
         if (!token) {
             return res.status(401).json({ success: false, message: "Token Missing" });
         }

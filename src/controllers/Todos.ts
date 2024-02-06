@@ -90,7 +90,7 @@ const updateTodo = async (req : Request , res : Response) => {
             }
         })
     return res.status(200).json({
-        success : false,
+        success : true,
         message : "Todo update successfully !",
         update
     })
