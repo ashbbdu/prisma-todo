@@ -61,6 +61,7 @@ const createUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
                 firstName,
                 lastName,
                 email,
+                profilePic: `https://api.dicebear.com/5.x/initials/svg?seed=${firstName} ${lastName}`,
                 password: hashedPassword
             }
         });

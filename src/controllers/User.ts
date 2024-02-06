@@ -50,6 +50,7 @@ const createUser = async (req : Request , res : Response) => {
                 firstName,
                 lastName,
                 email,
+                profilePic : `https://api.dicebear.com/5.x/initials/svg?seed=${firstName} ${lastName}`,
                 password : hashedPassword
             }
         })

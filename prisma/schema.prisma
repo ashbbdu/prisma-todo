@@ -1,6 +1,5 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
    previewFeatures = ["relationJoins"]
@@ -8,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://ashishsrivastava1995:7e2mHhStTKau@ep-late-surf-a57m3mp2.us-east-2.aws.neon.tech/neondb?sslmode=require"
+  url = env("DATABASE_URL")
 }
 
 model User {
@@ -17,6 +16,7 @@ model User {
   firstName  String 
   lastName String
   password String
+  profilePic String?
   todos Todos[]
 }
 
